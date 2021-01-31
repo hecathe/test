@@ -5,11 +5,63 @@
 // Размеры
 $content-max-weight: 1240px;
 
+//Цвета
+$color-indigo: #2E3A59;
+$color-green: #00C368;
+$color-grey: #A6ABBD;
+$color-lightgrey: #E7EBF0;
+$color-lightgrey2: #F5F5F5;
+$color-white: #FFFFFF;
+
+@import "./common/normalize";
 @import "./common/fonts.scss";
+@import "./slick.css";
 
 * {
 	box-sizing: border-box;
 	outline-offset: 4px;
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+	color: $color-indigo;
+}
+
+img {
+	max-width: 100%;
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0 16px;
+}
+.title {
+	font-size: 24px;
+	line-height: 28px;
+	text-align: center;
+	letter-spacing: -0.01em;
+	margin: 0;
+}
+.title--before {
+	position: relative;
+
+	&::before {
+		position: absolute;
+		content: '';
+		width: 184px;
+		height: 4px;
+		top: -16px;
+		left: 50%;
+    	transform: translateX(-50%);
+		background-color: $color-green;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.title {
+		font-size: 40px;
+		line-height: 47px;
+	}
 }
 
 // https://github.com/WICG/focus-visible

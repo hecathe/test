@@ -2,8 +2,163 @@ extends ../template
 
 block variables
     - var title = 'Главная'
-    - var contactForm = true
 
 block content
-    main
-        h1 sborkaOtVasyana
+    main.main-content
+        section.presentation
+            .container
+                .presentation__img-wrap
+                    picture
+                        source(srcset="assets/images/banner-min.png 1x, assets/images/banner@2x-min.png 2x" media="(min-width: 1024px)")
+                        source(srcset="assets/images/banner-mobile-min.png 1x, assets/images/banner-mobile@2x-min.png 2x")
+                        img.presentation__img(src="banner-mobile-min.png" alt="")
+                    .presentation__desk-wrap
+                        .presentation__wrap
+                            .presentation__slider-img
+                                svg.presentation__slider-svg(width="64" height="71")
+                                    use(xlink:href="assets/images/sprite.svg#icon-headphones")
+                            p.presentation__text Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        .presentation__wrap
+                            .presentation__slider-img
+                                svg.presentation__slider-svg(width="64" height="71")
+                                    use(xlink:href="assets/images/sprite.svg#icon-mess")
+                            p.presentation__text Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        .presentation__wrap
+                            .presentation__slider-img
+                                svg.presentation__slider-svg(width="64" height="71")
+                                    use(xlink:href="assets/images/sprite.svg#icon-mouse")
+                            p.presentation__text Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        .presentation__wrap
+                            .presentation__slider-img
+                                svg.presentation__slider-svg(width="64" height="71")
+                                    use(xlink:href="assets/images/sprite.svg#icon-mess")
+                            p.presentation__text Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        .presentation__wrap
+                            .presentation__slider-img
+                                svg.presentation__slider-svg(width="64" height="71")
+                                    use(xlink:href="assets/images/sprite.svg#icon-headphones")
+                            p.presentation__text Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        .presentation__wrap
+                            .presentation__slider-img
+                                svg.presentation__slider-svg(width="64" height="71")
+                                    use(xlink:href="assets/images/sprite.svg#icon-list")
+                            p.presentation__text Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+
+                h1.presentation__title.title Lorem ipsum dolor sit, amet consectetur
+                
+                .presentation__slider
+                    .slider
+                        .slider-item
+                            .presentation__wrap
+                                .presentation__slider-img
+                                    svg(width="64" height="71")
+                                        use(xlink:href="assets/images/sprite.svg#icon-headphones")
+                                p.presentation__text Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        .slider-item
+                            .presentation__wrap
+                                .presentation__slider-img
+                                    svg(width="64" height="71")
+                                        use(xlink:href="assets/images/sprite.svg#icon-mess")
+                                p.presentation__text Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        .slider-item
+                            .presentation__wrap
+                                .presentation__slider-img
+                                    svg(width="64" height="71")
+                                        use(xlink:href="assets/images/sprite.svg#icon-mouse")
+                                p.presentation__text Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        .slider-item
+                            .presentation__wrap
+                                .presentation__slider-img
+                                    svg(width="64" height="71")
+                                        use(xlink:href="assets/images/sprite.svg#icon-mess")
+                                p.presentation__text Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        .slider-item
+                            .presentation__wrap
+                                .presentation__slider-img
+                                    svg(width="64" height="71")
+                                        use(xlink:href="assets/images/sprite.svg#icon-headphones")
+                                p.presentation__text Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        .slider-item
+                            .presentation__wrap
+                                .presentation__slider-img
+                                    svg(width="64" height="71")
+                                        use(xlink:href="assets/images/sprite.svg#icon-list")
+                                p.presentation__text Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+
+        .content-wrap
+            section.accordion
+                .container
+                    h2.accordion__title.title.title--before Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    p.accordion__text Porro ab rerum omnis magnam eligendi error nobis dolore?
+
+                    ul.accordion__list
+                        li.accordion__item
+                            button.accordion__btn
+                                svg.accordion__icon(width="30" height="30")
+                                    use(xlink:href="assets/images/sprite.svg#icon-stability")
+                                span.accordion__caption Lorem ipsum, dolor sit amet  adipisicing elit.
+                                svg.accordion__svg(width="19" height="11" viewBox="0 0 19 11" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                    <path d="M18.7 0.3C18.3 -0.1 17.7 -0.1 17.3 0.3L9.5 8.1L1.7 0.3C1.3 -0.1 0.7 -0.1 0.3 0.3C-0.1 0.7 -0.1 1.3 0.3 1.7L8.8 10.2C9.2 10.6 9.8 10.6 10.2 10.2L18.7 1.7C19.1 1.3 19.1 0.7 18.7 0.3Z" fill="#A6ABBD"/>
+                            .accordion__panel
+                                p.accordion__panel-text Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit
+                        li.accordion__item
+                            button.accordion__btn
+                                svg.accordion__icon(width="30" height="30")
+                                    use(xlink:href="assets/images/sprite.svg#icon-led")
+                                span.accordion__caption Lorem ipsum, dolor sit amet  adipisicing elit.
+                                svg.accordion__svg(width="19" height="11" viewBox="0 0 19 11" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                    <path d="M18.7 0.3C18.3 -0.1 17.7 -0.1 17.3 0.3L9.5 8.1L1.7 0.3C1.3 -0.1 0.7 -0.1 0.3 0.3C-0.1 0.7 -0.1 1.3 0.3 1.7L8.8 10.2C9.2 10.6 9.8 10.6 10.2 10.2L18.7 1.7C19.1 1.3 19.1 0.7 18.7 0.3Z" fill="#A6ABBD"/>
+                            .accordion__panel
+                                p.accordion__panel-text Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit
+                        li.accordion__item
+                            button.accordion__btn
+                                svg.accordion__icon(width="30" height="30")
+                                    use(xlink:href="assets/images/sprite.svg#icon-lightoff")
+                                span.accordion__caption Lorem ipsum, dolor sit amet  adipisicing elit.
+                                svg.accordion__svg(width="19" height="11" viewBox="0 0 19 11" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                    <path d="M18.7 0.3C18.3 -0.1 17.7 -0.1 17.3 0.3L9.5 8.1L1.7 0.3C1.3 -0.1 0.7 -0.1 0.3 0.3C-0.1 0.7 -0.1 1.3 0.3 1.7L8.8 10.2C9.2 10.6 9.8 10.6 10.2 10.2L18.7 1.7C19.1 1.3 19.1 0.7 18.7 0.3Z" fill="#A6ABBD"/>
+                            .accordion__panel
+                                p.accordion__panel-text Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit
+                        li.accordion__item
+                            button.accordion__btn
+                                svg.accordion__icon(width="30" height="30")
+                                    use(xlink:href="assets/images/sprite.svg#icon-spliter")
+                                span.accordion__caption Lorem ipsum, dolor sit amet  adipisicing elit.
+                                svg.accordion__svg(width="19" height="11" viewBox="0 0 19 11" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                    <path d="M18.7 0.3C18.3 -0.1 17.7 -0.1 17.3 0.3L9.5 8.1L1.7 0.3C1.3 -0.1 0.7 -0.1 0.3 0.3C-0.1 0.7 -0.1 1.3 0.3 1.7L8.8 10.2C9.2 10.6 9.8 10.6 10.2 10.2L18.7 1.7C19.1 1.3 19.1 0.7 18.7 0.3Z" fill="#A6ABBD"/>
+                            .accordion__panel
+                                p.accordion__panel-text Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit
+                        li.accordion__item
+                            button.accordion__btn
+                                svg.accordion__icon(width="30" height="30")
+                                    use(xlink:href="assets/images/sprite.svg#icon-poweroff")
+                                span.accordion__caption Lorem ipsum, dolor sit amet  adipisicing elit.
+                                svg.accordion__svg(width="19" height="11" viewBox="0 0 19 11" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                    <path d="M18.7 0.3C18.3 -0.1 17.7 -0.1 17.3 0.3L9.5 8.1L1.7 0.3C1.3 -0.1 0.7 -0.1 0.3 0.3C-0.1 0.7 -0.1 1.3 0.3 1.7L8.8 10.2C9.2 10.6 9.8 10.6 10.2 10.2L18.7 1.7C19.1 1.3 19.1 0.7 18.7 0.3Z" fill="#A6ABBD"/>
+                            .accordion__panel
+                                p.accordion__panel-text Laboriosam quas, aut consectetur animi autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae delenit
+                        
+            section.reviews
+                .container
+                    h2.reviews__title.title.title--before Lorem ipsum, dolor sit amet consectetur  elit.
+                    .reviews__block
+                        .reviews__img-wrap
+                            img.reviews__img(src="assets/images/avatar-min.png", alt="Аватар")
+                        .reviews__text-wrap
+                            blockquote.reviews__text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam quas, aut consectetur animi  autem aliquid consequuntur suscipit exercitationem laborum cupiditate magnam eaque quae deleniti, iste nisi expedita, provident excepturi officia! Porro ab rerum omnis magnam eligendi error nobis dolore? Porro ab rerum omnis magnam eligendi error nobis dolore? Porro ab rerum omnis magnam eligendi error nobis dolore? 
+                            span.reviews__author Jane Doe
+
+                    ul.reviews__list.reviews-list
+                        li.reviews-list__item
+                            .reviews-list__img-wrap
+                                img.reviews-list__img(src="assets/images/avatar-min.png", alt="Аватар")
+                            .reviews-list__text-wrap
+                                blockquote.reviews-list__text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam quas, aut consectetur animi  autem aliquid
+                                span.reviews__author Jane Doe
+                        li.reviews-list__item
+                            .reviews-list__img-wrap
+                                img.reviews-list__img(src="assets/images/avatar-min.png", alt="Аватар")
+                            .reviews-list__text-wrap
+                                blockquote.reviews-list__text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam quas, aut consectetur animi  autem aliquid
+                                span.reviews__author Jane Doe
+
