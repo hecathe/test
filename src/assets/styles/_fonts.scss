@@ -1,0 +1,35 @@
+@font-face {
+    font-weight: 500;
+    font-family: 'Inter';
+    font-style: normal;
+    src:
+        url('/src/assets/fonts/Inter-Medium.woff2') format('woff2'),
+        url('/src/assets/fonts/Inter-Medium.woff') format('woff');
+}
+
+@font-face {
+    font-weight: 600;
+    font-family: 'Inter';
+    font-style: normal;
+    src:
+        url('/src/assets/fonts/Inter-SemiBold.woff2') format('woff2'),
+        url('/src/assets/fonts/Inter-SemiBold.woff') format('woff');
+}
+
+@font-face {
+    font-weight: 400;
+    font-family: 'TTNorms';
+    font-style: normal;
+    src:
+        url('/src/assets/fonts/TTNorms-Regular.woff2') format('woff2'),
+        url('/src/assets/fonts/TTNorms-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-weight: 500;
+    font-family: 'TTTravels';
+    font-style: normal;
+    src:
+        url('/src/assets/fonts/TTTravels-Medium.woff2') format('woff2'),
+        url('/src/assets/fonts/TTTravels-Medium.woff') format('woff');
+}
