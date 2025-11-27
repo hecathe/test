@@ -1,17 +1,18 @@
 body {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
+  color: $dark-100;
 }
 
 .container {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-
   max-width: 1406px;
   width: 100%;
   padding: 0 15px;
   margin: 0 auto;
+
+  @media screen and (max-width: 767px) {
+    overflow-x: visible;
+  }
 }
 
 * {

@@ -4,6 +4,7 @@
       slides-per-view="1.5"
       space-between="20"
       speed="500"
+      overflow="visible"
       :navigation="{
         nextEl: '.slider__nav-btn--next',
         prevEl: '.slider__nav-btn--prev',
@@ -49,6 +50,11 @@ const props = defineProps({
 .slider {
   min-width: 0;
   position: relative;
+
+  @media screen and (max-width: 767px) {
+    margin: 0 -15px;
+    padding-right: 15px;
+  }
 
   &__nav {
     position: absolute;

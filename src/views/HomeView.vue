@@ -1,12 +1,9 @@
 <template>
-  <section class="slider-section section">
-    <div class="container">
-      <Slider :slides="slides"></Slider>
-    </div>
-  </section>
+  <SliderSection />
+  <ProjectSection />
 </template>
 
 <script setup>
-import { slides } from "@/data/slides";
-import Slider from "@/components/Slider.vue";
+import SliderSection from "@/components/SliderSection.vue";
+import ProjectSection from "@/components/ProjectSection.vue";
 </script>

@@ -18,6 +18,10 @@
           <source :srcset="card.image_webp_mobile" media="(max-width: 767px)" type="image/webp" />
           <img :src="card.image" alt="дом" />
         </picture>
+        <div class="slider-card__tag">
+          <LocationIcon></LocationIcon>
+          {{ card.tag }}
+        </div>
       </div>
     </div>
   </div>
@@ -46,6 +50,7 @@
 
 <script setup>
 import ArrowIcon from "@/assets/svg/arrow.svg";
+import LocationIcon from "@/assets/svg/location.svg";
 
 const props = defineProps({
   card: {
@@ -95,6 +100,7 @@ const props = defineProps({
     margin-right: -28px;
 
     @media screen and (max-width: 640px) {
+      flex: none;
       width: 100%;
       margin-right: 0;
       margin-bottom: -14px;
@@ -144,14 +150,12 @@ const props = defineProps({
     position: relative;
     flex: 0 0 200px;
     height: 207px;
-    border-radius: 28px;
     overflow: hidden;
     filter: url(#goo);
 
     @media screen and (max-width: 640px) {
       width: 100%;
       flex: 0 0 135px;
-      border-radius: 15px;
     }
 
     picture {
@@ -217,6 +221,24 @@ const props = defineProps({
       color: $white-100;
       background-color: $blue-100;
     }
+  }
+
+  &__tag {
+    position: absolute;
+    right: 8px;
+    bottom: 10px;
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+    font-family: 'TTTravels Next';
+    font-size: 10px;
+    line-height: 100%;
+    text-transform: uppercase;
+    -webkit-text-stroke: thin;
+    background-color: $white-100;
+    border-radius: 32px;
+    padding: 4px 6px;
+    padding-right: 8px;
   }
 }
 </style>

@@ -33,3 +33,12 @@
         url('/src/assets/fonts/TTTravels-Medium.woff2') format('woff2'),
         url('/src/assets/fonts/TTTravels-Medium.woff') format('woff');
 }
+
+@font-face {
+    font-weight: 500;
+    font-family: 'TTTravels Next';
+    font-style: normal;
+    src:
+        url('/src/assets/fonts/TTTravelsNextTrialVariable.woff2') format('woff2'),
+        url('/src/assets/fonts/TTTravelsNextTrialVariable.woff') format('woff');
+}
