@@ -1,0 +1,16 @@
+<svg
+	viewBox="0 0 279 196"
+	preserveAspectRatio="none"
+	xmlns="http://www.w3.org/2000/svg"
+>
+	<defs>
+		<clipPath
+			id="descClip"
+			clipPathUnits="objectBoundingBox"
+		>
+			<path
+				d="M0 25C0 11.1929 11.1929 0 25 0H263.758C273.526 0 280.688 9.18768 278.304 18.6605L236.532 184.66C234.854 191.327 228.86 196 221.985 196H25C11.1929 196 0 184.807 0 171V25Z"
+			/>
+		</clipPath>
+	</defs>
+</svg>

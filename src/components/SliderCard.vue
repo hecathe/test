@@ -1,134 +1,181 @@
 <template>
   <div class="slider-card">
-    <div class="slider-card__desc">
-      <div class="slider-card__text">
+    <div class="slider-card__text">
+      <div class="slider-card__text-shape"></div>
+      <div class="slider-card__body">
         <div class="slider-card__date">{{ card.date }}</div>
         <h3 class="slider-card__title" v-html="card.title"></h3>
+        <RouterLink to="#" class="slider-card__link">
+          <ArrowIcon></ArrowIcon>
+        </RouterLink>
       </div>
-
-      <RouterLink to="#" class="slider-card__link">
-        <ArrowIcon></ArrowIcon>
-      </RouterLink>
     </div>
 
     <div class="slider-card__img">
-      <picture>
-        <source
-          :srcset="card.image_1"
-          media="(min-width: 768px)"
-          type="image/webp"
-        />
-        <source
-          :srcset="card.image_mobile"
-          media="(max-width: 767px)"
-          type="image/webp"
-        />
-        <img :src="card.image" alt="дом" />
-      </picture>
+      <div class="slider-card__img-shape">
+        <picture>
+          <source :srcset="card.image_webp_desktop" media="(min-width: 768px)" type="image/webp" />
+          <source :srcset="card.image_webp_mobile" media="(max-width: 767px)" type="image/webp" />
+          <img :src="card.image" alt="дом" />
+        </picture>
+      </div>
     </div>
-
-    <svg
-      width="0"
-      height="0"
-      viewBox="0 0 279 196"
-      style="position: absolute"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <clipPath id="descClip">
-        <path
-          d="M0 25C0 11.1929 11.1929 0 25 0H263.758C273.526 0 280.688 9.18768 278.304 18.6605L236.532 184.66C234.854 191.327 228.86 196 221.985 196H25C11.1929 196 0 184.807 0 171V25Z"
-        />
-      </clipPath>
-    </svg>
-
-    <svg
-      width="0"
-      height="0"
-      viewBox="0 0 197 208"
-      style="position: absolute"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <clipPath id="imgClip">
-        <path
-          d="M44.4911 15.0909C46.7382 6.21605 54.7244 0 63.8793 0H171.79C185.597 0 196.79 11.1929 196.79 25V182.644C196.79 196.451 185.597 207.644 171.79 207.644H15.0077C5.23052 207.644 -1.93327 198.44 0.4666 188.962L44.4911 15.0909Z"
-        />
-      </clipPath>
-    </svg>
   </div>
+
+  <svg
+    style="visibility: hidden; position: absolute"
+    width="0"
+    height="0"
+    xmlns="http://www.w3.org/2000/svg"
+    version="1.1"
+  >
+    <defs>
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+        <feColorMatrix
+          in="blur"
+          mode="matrix"
+          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+          result="goo"
+        />
+        <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+      </filter>
+    </defs>
+  </svg>
 </template>
 
 <script setup>
 import ArrowIcon from "@/assets/svg/arrow.svg";
 
 const props = defineProps({
-	card: {
-		type: Object,
-		default: () => {},
-	}
-})
+  card: {
+    type: Object,
+    default: () => {},
+  },
+});
 </script>
 
 <style lang="scss" scoped>
 .slider-card {
   $this: &;
   display: flex;
-  justify-content: flex-end;
   align-items: flex-end;
 
   &:hover {
-    #{$this}__desc {
-      color: $white-100;
-
-      &::before {
-        width: 100%;
-        height: 100%;
-        border-radius: 0;
-        right: 0;
-        bottom: 0;
-      }
-    }
-
     #{$this}__date {
       color: $dark-100;
       background: $white-100;
     }
 
-	#{$this}__img {
-		img {
-			transform: scale(1.2);
-		}
-	}
+    #{$this}__title {
+      color: $white-100;
+    }
+
+    #{$this}__img {
+      img {
+        transform: scale(1.2);
+      }
+    }
+
+    #{$this}__text-shape {
+      &::before {
+        background: $gradient-blue;
+      }
+    }
   }
 
-  &__desc {
-    position: absolute;
-	left: 0;
-	min-width: 280px;
-    width: 280px;
-    height: 196px;
-    display: flex;
+  @media screen and (max-width: 640px) {
     flex-direction: column;
-    background-color: $grey-6;
-    border-radius: 20px;
-    clip-path: url(#descClip);
-    -webkit-clip-path: url(#descClip);
-    padding: 15px;
-    overflow: hidden;
-    transition: color 250ms linear;
+  }
+
+  &__text {
+    position: relative;
+    flex: 1;
+    height: 196px;
+    margin-right: -28px;
+
+    @media screen and (max-width: 640px) {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: -14px;
+    }
+  }
+
+  &__text-shape {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    color: #f2f2f2;
+    filter: url("#goo");
+    z-index: -1;
 
     &::before {
       position: absolute;
       content: "";
-      right: -50%;
-      bottom: -50%;
-      width: 0;
+      inset: 0;
+      display: block;
+      color: inherit;
+      background: currentColor;
+      clip-path: polygon(0% 0%, 100% 0%, calc(100% - 40px) 100%, 0% 100%);
+      transition: background 250ms linear;
+    }
+
+    @media screen and (max-width: 640px) {
+      &::before {
+        clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 20px), 0% 100%);
+      }
+    }
+  }
+
+  &__body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  &__link {
+    margin-top: auto;
+  }
+
+  &__img {
+    position: relative;
+    flex: 0 0 200px;
+    height: 207px;
+    border-radius: 28px;
+    overflow: hidden;
+    filter: url(#goo);
+
+    @media screen and (max-width: 640px) {
+      width: 100%;
+      flex: 0 0 135px;
+      border-radius: 15px;
+    }
+
+    picture {
+      position: absolute;
+      inset: 0;
+    }
+
+    img {
+      width: 100%;
       height: 100%;
-      border-radius: 100%;
-      background: $gradient-blue;
-      transition: all 250ms linear;
-      z-index: -1;
+      object-fit: cover;
+      object-position: left;
+      transition: transform 250ms linear;
+    }
+  }
+
+  &__img-shape {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    clip-path: polygon(40px 0%, 100% 0%, 100% 100%, 0% 100%);
+    
+    @media screen and (max-width: 640px) {
+      clip-path: polygon(0 20px, 100% 0%, 100% 100%, 0% 100%);
     }
   }
 
@@ -141,7 +188,7 @@ const props = defineProps({
     border-radius: 8px;
     background: $gradient-blue-grey;
     padding: 9px 12px;
-	transition: background 250ms linear, color 250ms linear;
+    transition: background 250ms linear, color 250ms linear;
   }
 
   &__title {
@@ -149,6 +196,8 @@ const props = defineProps({
     font-size: 16px;
     line-height: 130%;
     text-transform: uppercase;
+    transition: color 250ms linear;
+    margin: 0;
   }
 
   &__link {
@@ -168,20 +217,6 @@ const props = defineProps({
       color: $white-100;
       background-color: $blue-100;
     }
-  }
-
-  &__img {
-    width: 196px;
-    height: 207px;
-    // position: relative;
-    // right: 2%;
-    border-radius: 20px;
-    clip-path: url(#imgClip);
-    -webkit-clip-path: url(#imgClip);
-
-	img {
-		transition: transform 250ms linear;
-	}
   }
 }
 </style>

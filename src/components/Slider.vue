@@ -1,12 +1,20 @@
 <template>
   <div class="slider">
     <swiper-container
-      slides-per-view="3"
+      slides-per-view="1.5"
       space-between="20"
       speed="500"
       :navigation="{
         nextEl: '.slider__nav-btn--next',
         prevEl: '.slider__nav-btn--prev',
+      }"
+      :breakpoints="{
+        950: {
+          slidesPerView: 2,
+        },
+        1280: {
+          slidesPerView: 3,
+        },
       }"
     >
       <swiper-slide v-for="(slide, index) in slides" :key="index">
@@ -50,11 +58,14 @@ const props = defineProps({
     display: flex;
     flex-direction: column;
     border-radius: 16px;
-    // background: $dark-60;
     background: hsla(228, 8%, 12%, 0.4);
     backdrop-filter: blur(19px);
     padding: 5px;
     z-index: 1;
+
+    @media screen and (max-width: 640px) {
+      display: none;
+    }
   }
 
   &__nav-btn {
