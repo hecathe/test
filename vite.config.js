@@ -22,6 +22,7 @@ export default defineConfig({
       scss: {
         additionalData: `
           @use "@/assets/styles/_fonts.scss" as *;
+          @use "@/assets/styles/_animation.scss" as *;
           @use "@/assets/styles/_variables.scss" as *;
         `,
       },

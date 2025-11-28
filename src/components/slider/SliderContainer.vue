@@ -1,7 +1,7 @@
 <template>
   <div class="slider">
     <swiper-container
-      slides-per-view="1.5"
+      slides-per-view="1.3"
       space-between="20"
       speed="500"
       overflow="visible"
@@ -36,7 +36,7 @@
 
 <script setup>
 import ArrowIcon from "@/assets/svg/arrow.svg";
-import SliderCard from "@/components/SliderCard.vue";
+import SliderCard from "@/components/slider/SliderCard.vue";
 
 const props = defineProps({
   slides: {
@@ -52,8 +52,8 @@ const props = defineProps({
   position: relative;
 
   @media screen and (max-width: 767px) {
-    margin: 0 -15px;
-    padding-right: 15px;
+    // margin: 0 -15px;
+    // padding-right: 15px;
   }
 
   &__nav {
