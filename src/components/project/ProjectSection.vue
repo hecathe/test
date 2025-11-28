@@ -60,6 +60,10 @@ onMounted(() => {
   padding: 60px 0;
   overflow: hidden;
 
+  @media screen and (max-width: 640px) {
+    padding: 0 0 20px;
+  }
+
   &__title {
     font-size: 48px;
     font-weight: 600;
