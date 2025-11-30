@@ -33,6 +33,7 @@ onMounted(() => {
   transform: translateY(70px);
   transition: opacity 1.1s cubic-bezier(0.25, 0.8, 0.25, 1),
     transform 1.1s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow-x: hidden;
 }
 
 .slider-section.is-visible {

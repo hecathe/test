@@ -55,7 +55,7 @@ const props = defineProps({
 
   @media screen and (max-width: 640px) {
     swiper-container::part(container) {
-      overflow: visible !important;
+      overflow: visible;
     }
   }
 
