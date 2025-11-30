@@ -47,13 +47,16 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
+
+
 .slider {
   min-width: 0;
   position: relative;
 
-  @media screen and (max-width: 767px) {
-    // margin: 0 -15px;
-    // padding-right: 15px;
+  @media screen and (max-width: 640px) {
+    swiper-container::part(container) {
+      overflow: visible !important;
+    }
   }
 
   &__nav {

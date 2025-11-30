@@ -1,7 +1,7 @@
 <template>
   <section class="slider-section" :class="{ 'is-visible': isVisible }">
     <div class="container">
-      <Slider :slides="slides"></Slider>
+      <SliderContainer :slides="slides"></SliderContainer>
     </div>
   </section>
 </template>
@@ -9,7 +9,7 @@
 <script setup>
 import { onMounted, ref } from "vue";
 import { slides } from "@/data/slides";
-import Slider from "@/components/slider/SliderContainer.vue";
+import SliderContainer from "@/components/slider/SliderContainer.vue";
 
 const isVisible = ref(false);
 
